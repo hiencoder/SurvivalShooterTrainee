@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
+    //https://github.com/topics/unity3d
+    //https://github.com/Unity-Technologies/EntityComponentSystemSamples
+    //https://tuananhict.wordpress.com/category/unity-game/page/1/
+    //https://en.wikipedia.org/wiki/Projectile_motion
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;

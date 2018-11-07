@@ -86,6 +86,7 @@ public class EnemyHealth : MonoBehaviour
         //
         Destroy(gameObject, 2f);
     }
+    
     public class EnemyEntity
     {
         protected int health;

@@ -7,7 +7,7 @@ public class PauseManager : MonoBehaviour
 {
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot unPaused;
-    public Canvas panelSetting;
+    Canvas panelSetting;
     private bool isShowing;
 
     //Open/close panel setting
@@ -54,18 +54,20 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        if(Time.timeScale == 0){
-			Time.timeScale = 1;
-		}
-		LowPass();
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        LowPass();
     }
 
     public void PauseGame()
     {
         //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-		if(Time.timeScale == 1){
-			Time.timeScale = 0;
-		}
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
         LowPass();
     }
 
@@ -73,11 +75,11 @@ public class PauseManager : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-			paused.TransitionTo(0.1f);
+            paused.TransitionTo(0.1f);
         }
         else
         {
-			unPaused.TransitionTo(0.1f);
+            unPaused.TransitionTo(0.1f);
         }
     }
     public void OpenSetting()
@@ -85,12 +87,12 @@ public class PauseManager : MonoBehaviour
         if (panelSetting.enabled == false)
         {
             panelSetting.GetComponent<Canvas>().enabled = true;
-			PauseGame();
+            PauseGame();
         }
         else
         {
             panelSetting.GetComponent<Canvas>().enabled = false;
-			ResumeGame();
+            ResumeGame();
         }
     }
 }
