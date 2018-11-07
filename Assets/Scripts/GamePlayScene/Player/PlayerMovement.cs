@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 
         float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
-
+        
         Move(h, v);
         Turning();
         Animating(h, v);

@@ -14,8 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     Animator animator;
     AudioSource playerAudio;
-    public PlayerMovement playerMovement;
-    public PlayerShooting playerShooting;
+    PlayerMovement playerMovement;
+    PlayerShooting playerShooting;
     bool isDead;
     bool damaged;
     /// <summary>
@@ -23,21 +23,68 @@ public class PlayerHealth : MonoBehaviour
     /// </summary>
     void Awake()
     {
-		animator = GetComponent<Animator>();
-		playerAudio = GetComponent<AudioSource>();
-		playerMovement = GetComponent<PlayerMovement>();
-
-		currentHealth = startingHealth;
+        animator = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerShooting = GetComponentInChildren<PlayerShooting>();
+        currentHealth = startingHealth;
     }
     // Use this for initialization
     void Start()
     {
-		
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (damaged)
+        {
+            damageImage.color = flashColor;
+        }
+        else
+        {
+            if (damageImage != null)
+            {
+                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            }
+            else
+            {
+                Debug.Log("DamageImage: Null");
+            }
+        }
+    }
 
+    public void TakeDamage(int amount)
+    {
+        damaged = true;
+
+        currentHealth -= amount;
+        //Set health bar player
+        healthSlider.value = currentHealth;
+
+        //Play hurt sound effect
+        playerAudio.Play();
+
+        if (currentHealth <= 0 && !isDead)
+        {
+            Death();
+        }
+    }
+
+    public void Death()
+    {
+        isDead = true;
+
+        playerShooting.DisableEffects();
+
+        //Set trigger anim
+        animator.SetTrigger("Die");
+
+        playerAudio.clip = deathClip;
+        playerAudio.Play();
+
+        playerMovement.enabled = false;
+        playerShooting.enabled = false;
     }
 }

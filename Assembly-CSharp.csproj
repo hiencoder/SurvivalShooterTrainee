@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Enemy\ZomBunnyEntity.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Manager\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerMovement.cs" />
