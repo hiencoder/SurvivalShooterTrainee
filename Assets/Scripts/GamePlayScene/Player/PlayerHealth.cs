@@ -64,6 +64,7 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
 
         currentHealth -= amount;
+        Debug.Log("CurrentHealth: " + currentHealth);
         //Set health bar player
         healthSlider.value = currentHealth;
 

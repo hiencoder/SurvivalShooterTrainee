@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public GameObject itemDrop;
     public int startingHealth = 100;
     public int currentHealth;
     public float sinkSpeed = 2.5f;
@@ -73,6 +74,13 @@ public class EnemyHealth : MonoBehaviour
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+
+        //Increase score
+        ScoreManager.score += scoreValue;
+
+        Destroy(gameObject, 2f);
+        Instantiate(itemDrop, transform.position, transform.rotation);
+
     }
 
     public void StartSinking()
@@ -83,10 +91,15 @@ public class EnemyHealth : MonoBehaviour
 
         isSinking = true;
 
-        //
+        //Increase score
+        ScoreManager.score += scoreValue;
+
         Destroy(gameObject, 2f);
+
+        //instantiate item drop
+        Instantiate(itemDrop, transform.position, transform.rotation);
     }
-    
+
     public class EnemyEntity
     {
         protected int health;
