@@ -78,7 +78,7 @@ public class EnemyHealth : MonoBehaviour
         //Increase score
         ScoreManager.score += scoreValue;
 
-        Destroy(gameObject, 2f);
+        //Create item
         Instantiate(itemDrop, transform.position, transform.rotation);
 
     }
@@ -97,30 +97,6 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject, 2f);
 
         //instantiate item drop
-        Instantiate(itemDrop, transform.position, transform.rotation);
-    }
-
-    public class EnemyEntity
-    {
-        protected int health;
-        protected int score;
-        protected int damaged;
-        protected int speed;
-        protected AudioClip deathClip;
-    }
-
-    public class ZomBunnyEntity : EnemyEntity
-    {
-
-    }
-
-    public class ZomBearEntity : EnemyEntity
-    {
-
-    }
-
-    public class HellephantEntity : EnemyEntity
-    {
-
+        //Instantiate(itemDrop, transform.position, transform.rotation);
     }
 }

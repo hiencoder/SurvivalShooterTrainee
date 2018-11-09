@@ -29,5 +29,6 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         text.text = "Score: " + score;
+        Debug.Log("Score: " + score);
     }
 }

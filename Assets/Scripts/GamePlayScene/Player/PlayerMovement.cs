@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidBody;
     int floorMask;
     float camRayLength = 100f;
+    //Button E to pick up item
+
+    GameObject itemDrop;
     // Use this for initialization
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    //https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
     /// </summary>
@@ -34,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 
         float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
-        
+
         Move(h, v);
         Turning();
         Animating(h, v);
@@ -59,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             playerRigidBody.MoveRotation(newRotation);
         }
 
+
         Vector3 turnDir = new Vector3(CrossPlatformInputManager.GetAxisRaw("Mouse X"), 0f, CrossPlatformInputManager.GetAxisRaw("Mouse Y"));
         if (turnDir != Vector3.zero)
         {
@@ -78,9 +83,34 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		
+
     }
 
+    public void pickUp()
+    {
+
+    }
+
+    /// <summary>
+    /// OnTriggerEnter is called when the Collider other enters the trigger.
+    /// </summary>
+    /// <param name="other">The other Collider involved in this collision.</param>
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ItemDrop"))
+        {
+            
+        }
+    }
+
+    /// <summary>
+    /// OnTriggerExit is called when the Collider other has stopped touching the trigger.
+    /// </summary>
+    /// <param name="other">The other Collider involved in this collision.</param>
+    void OnTriggerExit(Collider other)
+    {
+
+    }
     public void MoveLeft()
     {
         Debug.Log("Move left");
