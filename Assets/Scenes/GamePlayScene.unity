@@ -2140,6 +2140,41 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114650377588777848, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: velocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650377588777848, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650377588777848, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: resolution
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650377588777848, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: playerBullet
+      value: 
+      objectReference: {fileID: 163594, guid: 3471e7f15435f284bbc0d27c6e0f8cd2, type: 2}
+    - target: {fileID: 120661999397670548, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 120661999397670548, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.16041368
+      objectReference: {fileID: 0}
+    - target: {fileID: 120661999397670548, guid: 72192d4781866a544a50212e0e997d6d,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72192d4781866a544a50212e0e997d6d, type: 2}
   m_IsPrefabAsset: 0

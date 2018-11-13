@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 public class PlayerShooting : MonoBehaviour
 {
+    //https://vilbeyli.github.io/Projectile-Motion-Tutorial-for-Arrows-and-Missiles-in-Unity3D/
+    //https://www.youtube.com/watch?v=IvT8hjy6q4o
+    //https://www.youtube.com/watch?v=iLlWirdxass
     public int damagePerShot = 20;
     public float timeBetweenBullets = 0.05f;
     public float range = 100f;
@@ -19,6 +22,14 @@ public class PlayerShooting : MonoBehaviour
     public Light faceLight;
     float effectDisplayTime = 0.2f;
 
+    public GameObject playerBullet;
+
+    public float velocity;
+    public float angle;
+    public int resolution;
+    float g;
+    float radianAngle;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -30,21 +41,65 @@ public class PlayerShooting : MonoBehaviour
         gunLight = GetComponent<Light>();
         gunAudio = GetComponent<AudioSource>();
 
+        g = Mathf.Abs(Physics2D.gravity.y);
     }
     // Use this for initialization
     void Start()
     {
-
+        //RenderArc();
     }
+
+    public void RenderArc()
+    {
+        gunLine.SetVertexCount(resolution + 1);
+        gunLine.SetPositions(CalculateArcArray());
+    }
+
+    public Vector3[] CalculateArcArray()
+    {
+        Vector3[] arcArray = new Vector3[resolution + 1];
+        radianAngle = Mathf.Deg2Rad * angle;
+        float maxDistance = (velocity * velocity * Mathf.Sin(2 * radianAngle)) / g;
+
+        for (int i = 0; i <= resolution; i++)
+        {
+            float t = (float)i / resolution;
+            arcArray[i] = CalculateArcPoint(t, maxDistance);
+        }
+        return arcArray;
+    }
+
+    public Vector3 CalculateArcPoint(float t, float maxDistance)
+    {
+        float x = t * maxDistance;
+        float y = x * Mathf.Tan(radianAngle) - ((g * x * x) / (2 * velocity * velocity * Mathf.Cos(radianAngle) * Mathf.Cos(radianAngle)));
+
+        return new Vector3(x, y);
+    }
+
+
+    public void OnValidate()
+    {
+        // if(gunLine != null && Application.isPlaying){
+        //     RenderArc();
+        // }
+    }
+    float x;
+    float y;
+    float z;
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-
+        //
+        Vector3 current = Input.mousePosition;
+        x = current.x;
+        y = current.y;
+        z = current.z;
+        //
         if (Input.GetButton("Fire1") && timer > timeBetweenBullets && Time.timeScale != 0)
         {
-            Debug.Log("Fire1");
             Shoot();
         }
 
@@ -87,11 +142,13 @@ public class PlayerShooting : MonoBehaviour
                 enemyHealth.TakeDamage(damagePerShot, shootHit.point);
             }
 
-            gunLine.SetPosition(1, shootHit.point);
+            //gunLine.SetPosition(1, shootHit.point);
+            RenderArc();
         }
         else
         {
-			gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            //gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            RenderArc();
         }
     }
     public void DisableEffects()

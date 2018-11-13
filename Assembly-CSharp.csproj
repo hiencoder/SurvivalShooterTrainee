@@ -103,10 +103,14 @@
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\ZomBunnyEntity.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Manager\DataController.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Manager\EnemyManager.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\MathParabola.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\ParabolaController.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\HoldItems.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerProgress.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerShooting.cs" />
      <Compile Include="Assets\Scripts\Helpers\Parabolizer.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ApplicationManager.cs" />
