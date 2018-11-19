@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/GamePlayScene.unity
+- path: Assets/Virtual Joystick Pack/Examples/3D Example/3DExampleScene.unity
   isLoaded: 1
   isActive: 1
