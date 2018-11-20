@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     //Button E to pick up item
 
     GameObject itemDrop;
+    Transform playerTransform;
+    public Joystick joystick;
     // Use this for initialization
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -20,29 +22,25 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
-
+        //playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody>();
-    }
-    void Start()
-    {
-
     }
 
     //https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
     /// </summary>
-    void FixedUpdate()
-    {
-        float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+    // void FixedUpdate()
+    // {
+    //     float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 
-        float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
+    //     float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
 
-        Move(h, v);
-        Turning();
-        Animating(h, v);
-    }
+    //     Move(h, v);
+    //     Turning();
+    //     Animating(h, v);
+    // }
 
     public void Animating(float h, float v)
     {
@@ -74,16 +72,26 @@ public class PlayerMovement : MonoBehaviour
             playerRigidBody.MoveRotation(newRotation);
         }
     }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
+        if (moveVector != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(moveVector);
+            transform.Translate(moveVector * speed * Time.deltaTime, Space.World);
+            //playerRigidBody.MovePosition(transform.position + moveVector);
+        }
+        
+    }
     public void Move(float h, float v)
     {
         movement.Set(h, 0f, v);
         movement = movement.normalized * speed * Time.deltaTime;
         playerRigidBody.MovePosition(transform.position + movement);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void pickUp()
@@ -99,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ItemDrop"))
         {
-            
+
         }
     }
 
@@ -111,23 +119,5 @@ public class PlayerMovement : MonoBehaviour
     {
 
     }
-    public void MoveLeft()
-    {
-        Debug.Log("Move left");
-    }
 
-    public void MoveRight()
-    {
-        Debug.Log("Move right");
-    }
-
-    public void MoveTop()
-    {
-        Debug.Log("Move top");
-    }
-
-    public void MoveDown()
-    {
-
-    }
 }

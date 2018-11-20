@@ -98,10 +98,10 @@ public class PlayerShooting : MonoBehaviour
         y = current.y;
         z = current.z;
         //
-        if (Input.GetButton("Fire1") && timer > timeBetweenBullets && Time.timeScale != 0)
-        {
-            Shoot();
-        }
+        // if (Input.GetButton("Fire1") && timer > timeBetweenBullets && Time.timeScale != 0)
+        // {
+        //     Shoot();
+        // }
 
         // if ((CrossPlatformInputManager.GetAxisRaw("Mouse X") != 0 || CrossPlatformInputManager.GetAxisRaw("Mouse Y") != 0) && timer > timeBetweenBullets)
         // {

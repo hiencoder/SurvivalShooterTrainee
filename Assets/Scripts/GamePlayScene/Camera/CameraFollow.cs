@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target; //Vi tri camera se chuyen den
+    public Transform target; 
     public float smoothing = 5f;
     Vector3 offset;
 

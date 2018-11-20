@@ -60,8 +60,8 @@ GameObject:
   - component: {fileID: 54258561357455882}
   - component: {fileID: 136579982806091744}
   - component: {fileID: 82425981775881640}
-  - component: {fileID: 114107528769249620}
   - component: {fileID: 114906856627938636}
+  - component: {fileID: 114686505129164738}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578108075588948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.37, y: 0, z: -9.58}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4157448519318504}
@@ -404,7 +404,7 @@ Light:
   m_Enabled: 0
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.92941177, g: 0.93333334, b: 0.09411765, a: 1}
   m_Intensity: 16
   m_Range: 10
   m_SpotAngle: 70
@@ -469,18 +469,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114107528769249620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1578108075588948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5d73b3de0f71842942d22d4ef528a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
 --- !u!114 &114650377588777848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,6 +484,23 @@ MonoBehaviour:
   timeBetweenBullets: 0.12
   range: 100
   faceLight: {fileID: 108538350896173076}
+  playerBullet: {fileID: 163594, guid: 3471e7f15435f284bbc0d27c6e0f8cd2, type: 2}
+  velocity: 5
+  angle: 45
+  resolution: 20
+--- !u!114 &114686505129164738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578108075588948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5d73b3de0f71842942d22d4ef528a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  joystick: {fileID: 0}
 --- !u!114 &114906856627938636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -521,7 +526,7 @@ LineRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041392313265564}
   m_Enabled: 0
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
@@ -560,7 +565,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.053846303
+        value: 0.16041368
         inSlope: 0
         outSlope: 0
         tangentMode: 0
