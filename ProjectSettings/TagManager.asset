@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fire
   - ItemDrop
+  - Player Bullet
+  - PlayerTurret
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MainGameBlack
+    uniqueID: 1853791061
+    locked: 0
+  - name: MainGameFront
+    uniqueID: 727699777
     locked: 0

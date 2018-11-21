@@ -98,6 +98,9 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\Scripts\Audio\MixLevels.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Bullet\BasicMovement.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Bullet\DestroyByBoundary.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Bullet\ObjectPooler.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Enemy\EnemyHealth.cs" />
@@ -107,10 +110,10 @@
      <Compile Include="Assets\Scripts\GamePlayScene\Manager\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\HoldItems.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerJoyStick.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerProgress.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerShooting.cs" />
+     <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerShot.cs" />
      <Compile Include="Assets\Scripts\Helpers\Parabolizer.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />

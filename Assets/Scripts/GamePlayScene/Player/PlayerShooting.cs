@@ -30,6 +30,9 @@ public class PlayerShooting : MonoBehaviour
     float g;
     float radianAngle;
 
+    /*
+        Ball lauchn
+     */
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>

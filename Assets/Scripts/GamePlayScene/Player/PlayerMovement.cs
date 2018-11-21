@@ -83,9 +83,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(moveVector);
             transform.Translate(moveVector * speed * Time.deltaTime, Space.World);
-            //playerRigidBody.MovePosition(transform.position + moveVector);
+            float h = joystick.Horizontal;
+            float v = joystick.Vertical;
+            Animating(h, v);
         }
-        
+
     }
     public void Move(float h, float v)
     {

@@ -8,14 +8,14 @@ public class GameOver : MonoBehaviour
     public float restartDelay = 5f;
 
     Animator animator;
-	float restartTimer;
+    float restartTimer;
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
-		animator = GetComponent<Animator>();
-    }	
+        animator = GetComponent<Animator>();
+    }
     // Use this for initialization
     void Start()
     {
@@ -25,12 +25,14 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if(playerHealth.currentHealth <= 0){
-			animator.SetTrigger("GameOver");
-			restartTimer += Time.deltaTime;
-			if(restartTimer >= restartDelay){
-				Application.LoadLevel(Application.loadedLevel);
-			}
-		}
+        if (playerHealth.currentHealth <= 0)
+        {
+            animator.SetTrigger("GameOver");
+            restartTimer += Time.deltaTime;
+            if (restartTimer >= restartDelay)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+        }
     }
 }
