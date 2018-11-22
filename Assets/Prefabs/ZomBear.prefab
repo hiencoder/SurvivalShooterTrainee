@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8200000}
   m_Layer: 10
   m_Name: ZomBear
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb38ffaf2c063d549a32acd3187cf4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDrop: {fileID: 0}
   startingHealth: 100
   currentHealth: 0
   sinkSpeed: 2.5

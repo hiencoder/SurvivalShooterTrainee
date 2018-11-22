@@ -108,7 +108,6 @@ public class PlayerShooting : MonoBehaviour
 
         // if ((CrossPlatformInputManager.GetAxisRaw("Mouse X") != 0 || CrossPlatformInputManager.GetAxisRaw("Mouse Y") != 0) && timer > timeBetweenBullets)
         // {
-        //     Debug.Log("Mouse X or Mouse Y");
         //     Shoot();
         // }
 

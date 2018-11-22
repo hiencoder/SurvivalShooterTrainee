@@ -22,7 +22,6 @@ public class ObjectPooler : MonoBehaviour
     void Awake()
     {
         instance = this;
-
     }
     // Use this for initialization
     void Start()
@@ -39,7 +38,7 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
-    public GameObject getPoolObject(string tag)
+    public GameObject GetPoolObject(string tag)
     {
         for (int i = 0; i < pooledObject.Count; i++)
         {
