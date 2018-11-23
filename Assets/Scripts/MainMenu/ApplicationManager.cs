@@ -7,8 +7,8 @@ public class ApplicationManager : MonoBehaviour
 
     public void Quit()
     {
-		UnityEditor.EditorApplication.isPlaying = false;
-		Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
-    
+
 }
