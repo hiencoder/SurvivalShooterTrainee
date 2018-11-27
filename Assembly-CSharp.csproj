@@ -116,10 +116,6 @@
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerShooting.cs" />
      <Compile Include="Assets\Scripts\GamePlayScene\Player\PlayerShot.cs" />
      <Compile Include="Assets\Scripts\Helpers\Parabolizer.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\ApplicationManager.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\SettingMenuManager.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\TitleWindow.cs" />
      <Compile Include="Assets\Scripts\MainScene\ButtonEvent.cs" />
      <Compile Include="Assets\Scripts\Managers\GameOver.cs" />
      <Compile Include="Assets\Scripts\Managers\PauseManager.cs" />
